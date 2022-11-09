@@ -1,0 +1,5 @@
+package com.finalwork.configuration;
+
+public class DBConfiguration {
+
+}
