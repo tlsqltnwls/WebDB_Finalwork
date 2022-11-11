@@ -1,0 +1,18 @@
+package com.finalwork.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.finalwork.domain.PostDTO;
+
+// Post 테이블과 통신하기 위한 인터페이스
+@Mapper
+public interface PostMapper {
+
+	public int insertPost(PostDTO params);
+	public PostDTO selectPostDetail(Long idx);
+	public int updatePost(PostDTO params);
+	public int deletePost(Long idx);
+	public List<PostDTO> selectPostList();
+}

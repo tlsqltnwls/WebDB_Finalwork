@@ -1,0 +1,17 @@
+package com.finalwork.domain;
+
+import java.time.LocalDateTime;
+
+public class PostDTO {
+
+	private Long idx;					// 글 번호(PK)
+	private String siteName;			// 사이트 이름 (제목)
+	private String siteUrl;				// 사이트 url
+	private String siteId;				// 사이트 아이디
+	private String sitePwd;				// 사이트 비밀번호
+	private Long memUid;				// 작성한 회원번호 (FK)
+	private String deleteYn;			// 삭제여부
+	private LocalDateTime insertTime;	// 등록일
+	private LocalDateTime updateTime;	// 수정일
+	private LocalDateTime deleteTime;	// 삭제일
+}
