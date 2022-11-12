@@ -9,11 +9,18 @@
     <fullyQualifiedTypeName name="com.zaxxer.hikari.HikariDataSource"/>
     <fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionFactoryBean"/>
     <fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionTemplate"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
     <fullyQualifiedTypeName name="com.finalwork.domain.PostDTO"/>
+    <fullyQualifiedTypeName name="com.finalwork.mapper.PostMapper"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.core.JsonProcessingException"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.datatype.jsr310.JavaTimeModule"/>
+    <fullyQualifiedTypeName name="org.springframework.util.CollectionUtils"/>
     <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

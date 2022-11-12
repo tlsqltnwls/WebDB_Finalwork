@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.finalwork.mapper.PostMapper">
+
+	<sql id="postColumns">
+		  idx					// 글 번호(PK)
+		, site_name				// 사이트 이름 (제목)
+		, site_url				// 사이트 url
+		, site_id				// 사이트 아이디
+		, site_pwd				// 사이트 비밀번호
+		, mem_uid				// 작성한 회원번호 (FK)
+		, delete_yn				// 삭제여부
+		, insert_time			// 등록일
+		, update_time			// 수정일
+		, delete_time			// 삭제일
+	</sql>
+	
+	<insert id="insertPost" parameterType="PostDTO">
+		INSERT INTO post (
+			<include refid="postColumns" />
+		) VALUES (
+			  #{idx}
+			, #{siteName}
+			, #{siteUrl}
+			, #{siteId}
+			, #{sitePwd}
+			, #{memUid}
+			, 'N'
+			, NOW()
+			, NULL
+			, NULL
+		)
+	</insert>
+	
+	<select id="selectPostDetail" parameterType="long" resultType="PostDTO">
+		SELECT
+			<include refid="postColumns" />
+		FROM
+			post
+		WHERE
+			delete_yn = 'N'
+		AND
+			idx = #{idx}
+		AND
+			mem_uid = #{mem_uid} 	// 현재 내 mem_uid와 입력 된 mem_uid가 같아야 됨
+	</select>
+
+	<update id="updatePost" parameterType="PostDTO">
+		UPDATE post
+		SET
+			  update_time = NOW()
+			, site_name = #{siteName}
+			, site_url = #{siteUrl}
+			, site_id = #{siteId}
+			, site_pwd = #{sitePwd}
+		WHERE
+			idx = #{idx}
+		AND
+			mem_uid = #{mem_uid}
+	</update>
+
+	<update id="deletePost" parameterType="long">
+		UPDATE post
+		SET
+			  delete_yn = 'Y'
+			, delete_time = NOW()
+		WHERE
+			idx = #{idx}
+		AND
+			mem_uid = #{mem_uid}
+	</update>
+
+	<select id="selectPostList" parameterType="PostDTO" resultType="PostDTO">
+		SELECT
+			<include refid="postColumns" />
+		FROM
+			post
+		WHERE
+			delete_yn = 'N'
+		AND
+			mem_uid = #{mem_uid}
+		ORDER BY
+			notice_yn ASC,
+			idx DESC,
+			insert_time DESC
+	</select>
+
+	<select id="selectPostTotalCount" parameterType="PostDTO" resultType="int">
+		SELECT
+		
+		FROM
+			post
+		WHERE
+		
+	</select>
+
+
+
+
+</mapper>

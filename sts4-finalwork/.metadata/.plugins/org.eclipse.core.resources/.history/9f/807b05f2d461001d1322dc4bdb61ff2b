@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.finalwork.mapper.PostMapper">
+
+	<sql id="postColumns">
+		  idx					// 글 번호(PK)
+		, site_name				// 사이트 이름 (제목)
+		, site_url				// 사이트 url
+		, site_id				// 사이트 아이디
+		, site_pwd				// 사이트 비밀번호
+		, mem_uid				// 작성한 회원번호 (FK)
+		, delete_yn				// 삭제여부
+		, insert_time			// 등록일
+		, update_time			// 수정일
+		, delete_time			// 삭제일
+	</sql>
+	
+	<insert id="insertPost" parameterType="PostDTO">
+		INSERT INTO post (
+			<include refid="postColumns" />
+		) VALUES (
+			  #{idx}
+			, #{siteName}
+			, #{siteUrl}
+			, #{siteId}
+			, #{sitePwd}
+			, #{memUid}
+			, 'N'
+			, NOW()
+			, NULL
+			, NULL
+		)
+	</insert>
+	<select id="selectPostDetail" parameterType="long" resultType="PostDTO">
+		SELECT
+			<include refid="postColumns" />
+		FROM
+			post
+		WHERE
+			
+		AND
+	
+	
+	
+	
+	</select>
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
