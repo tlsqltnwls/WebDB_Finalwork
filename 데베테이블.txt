@@ -1,0 +1,21 @@
+post table
+	idx		글번호
+	site_name	사이트이름 (제목)
+	site_url	사이트 url
+	site_id		사이트 id
+	site_pwd	사이트 비번
+	mem_uid	회원번호 (FK)
+	delete_yn	삭제여부
+	insert_time	등록일
+	update_time	수정일
+	delete_time	삭제일
+
+
+member table
+	uid		회원번호 (PK)
+	id		아이디
+	pwd		비밀번호
+	delete_yn	삭제여부
+	insert_time	등록일
+	update_time	수정일
+	delete_time	삭제일
