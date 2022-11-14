@@ -12,7 +12,6 @@
     <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
     <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
     <fullyQualifiedTypeName name="com.finalwork.domain.PostDTO"/>
     <fullyQualifiedTypeName name="com.finalwork.mapper.PostMapper"/>
@@ -23,4 +22,6 @@
     <fullyQualifiedTypeName name="com.fasterxml.jackson.datatype.jsr310.JavaTimeModule"/>
     <fullyQualifiedTypeName name="org.springframework.util.CollectionUtils"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.finalwork.domain.MemberDTO"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
 </qualifiedTypeNameHistroy>

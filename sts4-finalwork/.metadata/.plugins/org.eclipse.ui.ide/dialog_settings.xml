@@ -31,4 +31,6 @@
 		<item value="org.eclipse.wst.common.fproj:3.7.3.v202111212041"/>
 		<item value="org.jboss.tools.m2e.wro4j.feature:1.2.0.202209071019"/>
 	</list>
+	<section name="NewWizardAction">
+	</section>
 </section>
