@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.boot.autoconfigure.SpringBootVFS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.PropertySource;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+// 기본 설정 파일
 @Configuration
 @PropertySource("classpath:/application.properties")
 public class DBConfiguration {
@@ -38,7 +40,7 @@ public class DBConfiguration {
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(dataSource());
 		factoryBean.setMapperLocations(applicationContext.getResources("classpath:/mapper/**/*Mapper.xml"));
-		factoryBean.setTypeAliasesPackage("com.finalwork.domain");
+		factoryBean.setTypeAliasesPackage("com.finalwork.*");
 		factoryBean.setConfiguration(mybatisConfg());
 		return factoryBean.getObject();
 	}

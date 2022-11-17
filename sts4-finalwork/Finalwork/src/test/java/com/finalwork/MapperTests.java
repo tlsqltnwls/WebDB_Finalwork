@@ -10,26 +10,37 @@ import org.springframework.util.CollectionUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.finalwork.domain.MemberDTO;
 import com.finalwork.domain.PostDTO;
+import com.finalwork.mapper.MemberMapper;
 import com.finalwork.mapper.PostMapper;
+import com.finalwork.paging.Criteria;
 
 @SpringBootTest
 public class MapperTests {
 
 	@Autowired
 	private PostMapper postMapper;
+	@Autowired
+	private Criteria criteria;
+	
 	
 	@Test
 	public void testOfInsert() {
 		PostDTO params = new PostDTO();
-		params.setSiteName("1번 사이트 이름");
-		params.setSiteUrl("1번 사이트 url");
-		params.setSiteId("1번 사이트 아이디");
-		params.setSitePwd("1번 사이트 비밀번호");
-		params.setMemUid((long) 1);
+		for (int i=1; i<20; i++) {
+			params.setSiteName(i + " 사이트 이름");
+			params.setSiteUrl(i + " 사이트 url");
+			params.setSiteId(i + "사이트 아이디");
+			params.setSitePwd(i + "사이트 비밀번호");
+			params.setMemUid((long) i);
+			
+			int result = postMapper.insertPost(params);
+			System.out.println("결과는 "+result+"입니다.");
+		}
 		
-		int result = postMapper.insertPost(params);
-		System.out.println("결과는 "+result+"입니다.");
+		
+		
 	}
 	
 	@Test
@@ -93,10 +104,11 @@ public class MapperTests {
 	
 	@Test
 	public void testSelectList() {
-		int postTotalCount = postMapper.selectPostTotalCount();
+		PostDTO params = new PostDTO();
+		int postTotalCount = postMapper.selectPostTotalCount(params);
 		if(postTotalCount > 0) {
 			System.out.println("postTotalCount > 0");
-			List<PostDTO> postList = postMapper.selectPostList();
+			List<PostDTO> postList = postMapper.selectPostList(params);
 			if (CollectionUtils.isEmpty(postList) == false) {
 				for (PostDTO post : postList) {
 					System.out.println("============");

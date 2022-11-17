@@ -3,7 +3,7 @@ package com.finalwork.domain;
 import java.time.LocalDateTime;
 
 // 게시물 관리하는 post table의 DTO
-public class PostDTO {
+public class PostDTO extends CommonDTO {
 
 	private Long idx;					// 글 번호(PK)
 	private String siteName;			// 사이트 이름 (제목)
@@ -11,19 +11,13 @@ public class PostDTO {
 	private String siteId;				// 사이트 아이디
 	private String sitePwd;				// 사이트 비밀번호
 	private Long memUid;				// 작성한 회원번호 (FK)
-	private String deleteYn;			// 삭제여부
-	private LocalDateTime insertTime;	// 등록일
-	private LocalDateTime updateTime;	// 수정일
-	private LocalDateTime deleteTime;	// 삭제일
 
 	
 	@Override
 	public String toString() {
 		return "PostDTO [idx=" + idx + ", siteName=" + siteName + ", siteUrl=" + siteUrl + ", siteId=" + siteId
-				+ ", sitePwd=" + sitePwd + ", memUid=" + memUid + ", deleteYn=" + deleteYn + ", insertTime="
-				+ insertTime + ", updateTime=" + updateTime + ", deleteTime=" + deleteTime + "]";
+				+ ", sitePwd=" + sitePwd + ", memUid=" + memUid + "]";
 	}
-	
 	public Long getIdx() {
 		return idx;
 	}
@@ -60,28 +54,6 @@ public class PostDTO {
 	public void setMemUid(Long memUid) {
 		this.memUid = memUid;
 	}
-	public String getDeleteYn() {
-		return deleteYn;
-	}
-	public void setDeleteYn(String deleteYn) {
-		this.deleteYn = deleteYn;
-	}
-	public LocalDateTime getInsertTime() {
-		return insertTime;
-	}
-	public void setInsertTime(LocalDateTime insertTime) {
-		this.insertTime = insertTime;
-	}
-	public LocalDateTime getUpdateTime() {
-		return updateTime;
-	}
-	public void setUpdateTime(LocalDateTime updateTime) {
-		this.updateTime = updateTime;
-	}
-	public LocalDateTime getDeleteTime() {
-		return deleteTime;
-	}
-	public void setDeleteTime(LocalDateTime deleteTime) {
-		this.deleteTime = deleteTime;
-	}
+
+	
 }

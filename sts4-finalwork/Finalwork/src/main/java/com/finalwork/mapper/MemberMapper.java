@@ -7,6 +7,10 @@ import com.finalwork.domain.MemberDTO;
 @Mapper
 public interface MemberMapper {
 
-	public void saveUser(MemberDTO params);
+	// 로그인
+	MemberDTO getUserAccount(String id);
+	
+	// 회원가입
+	public int saveUser(MemberDTO params);
 	
 }

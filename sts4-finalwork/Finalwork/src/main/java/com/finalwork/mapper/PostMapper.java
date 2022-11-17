@@ -14,6 +14,6 @@ public interface PostMapper {
 	public PostDTO selectPostDetail(Long idx);	// 하나의 게시글 조회
 	public int updatePost(PostDTO params);		// 게시글 수정
 	public int deletePost(Long idx);			// 게시글 삭제
-	public List<PostDTO> selectPostList();		// 게시글 목록 조회
-	public int selectPostTotalCount();			// 삭제여부(delete_yn)가 'N'으로 지정된 게시글 개수 조회
+	public List<PostDTO> selectPostList(PostDTO params);		// 게시글 목록 조회
+	public int selectPostTotalCount(PostDTO params);			// 삭제여부(delete_yn)가 'N'으로 지정된 게시글 개수 조회
 }

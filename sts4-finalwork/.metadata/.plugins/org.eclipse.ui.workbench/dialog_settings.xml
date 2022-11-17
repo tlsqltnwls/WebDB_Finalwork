@@ -8,4 +8,21 @@
 			<item value="org.eclipse.ui.Examples"/>
 		</list>
 	</section>
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.ui.wizards.export.FileSystem"/>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.equinox.p2.category"/>
+			<item value="org.eclipse.jdt.ui.Java"/>
+			<item value="org.eclipse.pde.ui.PluginDevelopment"/>
+		</list>
+	</section>
+	<section name="FileSystemExportWizard">
+		<item key="WizardFileSystemResourceExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID" value="false"/>
+		<item key="WizardFileSystemResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="false"/>
+		<item key="WizardFileSystemResourceExportPage1.STORE_RESOLVE_LINKED_RESOURCES_ID" value="false"/>
+		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\User\Desktop\학교\2022-2\웹DB\기말 제출"/>
+		</list>
+	</section>
 </section>
