@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.zn/thymeleaf/layout" layout:decorate="post/layout/basic">
+	<th:block layout:fragment="title">
+		<title>This is a write page</title>
+	</th:block>
+
+	<th:block layout:fragment="content">
+		<div class="card-content">
+			<form class="form-horizontal" th:action="@{/post/register.do}" th:object="${post}" method="post" onsubmit="return registerPost(this)">
+				<input type="hidden" th:if="*{idx != null and idx > 0}" th:field="*{idx}" />
+
+				<div class="form-group">
+					<label for="mem_uid" class="col-sm-2 control-label" th:text="${uid}">UID</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{memUid}" class="form-control" placeholder="UID를 입력해 주세요." />					
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<label for="site_name" class="col-sm-2 control-label">사이트 이름</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{siteName}" class="form-control" placeholder="사이트 이름을 입력해 주세요." />					
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="site_url" class="col-sm-2 control-label">사이트 URL</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{siteUrl}" class="form-control" placeholder="사이트 url을 입력해 주세요." />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="site_id" class="col-sm-2 control-label">ID</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{siteId}" class="form-control" placeholder="사이트 ID를 입력해 주세요." />					
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="site_pwd" class="col-sm-2 control-label">PWD</label>
+					<div class="col-sm-10">
+						<input type="text" th:field="*{sitePwd}" class="form-control" placeholder="사이트 비밀번호를 입력해 주세요." />
+					</div>
+				</div>
+
+				<div class="btn_wrap text-center" th:object="${params}">
+					<a th:href="|@{/post/list.do}" class="btn btn-default waves-effect waves-light">뒤로가기</a>
+					<button type="submit" class="btn btn-primary waves-effect waves-light">저장하기</button>
+				</div>
+			</form>
+		</div>	
+	</th:block>
+
+	<th:block layout:fragment="script">
+		<script th:inline="javascript">
+			/*<![CDATA[*/
+
+			function registerPost(form) {
+		
+				var result = (
+						   isValid(form.memUid, "회원번호", null, null)
+						&& isValid(form.siteName, "사이트 이름", null, null)
+						&& isValid(form.siteUrl, "사이트 URL", null, null)
+						&& isValid(form.siteId, "사이트 ID", null, null)
+						&& isValid(form.sitePwd, "사이트 PWD", null, null)
+				);
+			
+				if ( result == false ) {
+					
+					return false;
+				}
+			
+			}
+
+			/*]]>*/
+		</script>
+	</th:block>
+	
+		
+</html>

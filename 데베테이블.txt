@@ -1,3 +1,4 @@
+
 post table
 	idx		글번호
 	site_name	사이트이름 (제목)
@@ -15,7 +16,6 @@ member table
 	uid		회원번호 (PK)
 	id		아이디
 	pwd		비밀번호
-	delete_yn	삭제여부
-	insert_time	등록일
+	append_time	등록일
 	update_time	수정일
 	delete_time	삭제일

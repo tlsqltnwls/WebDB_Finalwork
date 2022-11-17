@@ -1,0 +1,6 @@
+package com.finalwork.mapper;
+
+public interface MemberMapper {
+
+	
+}

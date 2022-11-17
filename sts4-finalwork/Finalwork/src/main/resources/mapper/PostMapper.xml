@@ -42,8 +42,6 @@
 			delete_yn = 'N'
 		AND
 			idx = #{idx}
-		AND
-			mem_uid = #{memUid} 	-- 현재 내 mem_uid와 입력 된 mem_uid가 같아야 됨
 	</select>
 
 	<update id="updatePost" parameterType="PostDTO">
@@ -65,8 +63,6 @@
 			, delete_time = NOW()
 		WHERE
 			idx = #{idx}
-		AND
-			mem_uid = #{memUid}
 	</update>
 
 	<select id="selectPostList" parameterType="PostDTO" resultType="PostDTO">
@@ -76,9 +72,11 @@
 			post
 		WHERE
 			delete_yn = 'N'
+		<include refid="CommonMapper.search" />
 		ORDER BY
 			idx DESC,
 			insert_time DESC
+		<include refid="CommonMapper.paging" />
 	</select>
 
 	<select id="selectPostTotalCount" parameterType="PostDTO" resultType="int">
@@ -88,6 +86,7 @@
 			post
 		WHERE
 			delete_yn = 'N'
+		<include refid="CommonMapper.search" />
 	</select>
 
 </mapper>
